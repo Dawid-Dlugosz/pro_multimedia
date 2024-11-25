@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+
 import 'package:pro_multimedia/inherited_widgets/favourite/favourite_manager.dart';
+import 'package:pro_multimedia/inherited_widgets/filters/filters_manager.dart';
 import 'package:pro_multimedia/inherited_widgets/searcher/searcher_manager.dart';
 import 'package:pro_multimedia/pages/events_page/widgets/custom_app_bar.dart';
 import 'package:pro_multimedia/pages/events_page/widgets/events_list/events_list.dart';

@@ -1,5 +1,6 @@
 import 'package:pro_multimedia/entities/atraction.dart';
 import 'package:pro_multimedia/entities/event.dart';
+import 'package:pro_multimedia/entities/filter.dart';
 import 'package:pro_multimedia/utils/image_asset.dart';
 
 class DummyData {
@@ -331,6 +332,68 @@ class DummyData {
       ],
       isFree: true,
       snippedAddress: 'Gala muzyki filmowej',
+    ),
+  ];
+
+  static const filters = [
+    Filter(
+      category: 'Kultura',
+      tags: [
+        'Sztuki wizualne',
+        'Muzyka',
+        'Muzeum',
+        'Teatr',
+        'Kino',
+      ],
+    ),
+    Filter(
+      category: 'Oświata',
+      tags: [],
+    ),
+    Filter(
+      category: 'Ochrona zdrowia',
+      tags: [],
+    ),
+    Filter(
+      category: 'Sport',
+      tags: [],
+    ),
+    Filter(
+      category: 'Turystyka',
+      tags: [],
+    ),
+    Filter(
+      category: 'Gospodarka',
+      tags: [],
+    ),
+    Filter(
+      category: 'Ekologia',
+      tags: [],
+    ),
+    Filter(
+      category: 'Fundusze Europejskie',
+      tags: [],
+    ),
+    Filter(
+      category: 'Rodzaj wydarzenia',
+      tags: [
+        'Warsztaty',
+        'Targi',
+        'Pikniki',
+        'Kongresy',
+        'Koncerty',
+        'Spektakle',
+        'Wystawy',
+        'Konferencje',
+        'Rajdy',
+      ],
+    ),
+    Filter(
+      category: 'Według wieku',
+      tags: [
+        'Dla dzieci',
+        'Dla Seniora',
+      ],
     ),
   ];
 }
