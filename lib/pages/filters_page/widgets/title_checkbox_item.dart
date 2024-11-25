@@ -75,8 +75,8 @@ class TitleCheckboxItem extends StatelessWidget {
                     ),
               Padding(
                 padding: const EdgeInsets.only(left: 10),
-                child: Text(
-                  filter.category,
+                child: AnimatedDefaultTextStyle(
+                  duration: const Duration(milliseconds: 300),
                   style: TextStyle(
                     fontSize: 14,
                     fontWeight: FontWeight.w600,
@@ -84,6 +84,7 @@ class TitleCheckboxItem extends StatelessWidget {
                         ? colorExtension.primaryColor
                         : colorExtension.textColor,
                   ),
+                  child: Text(filter.category),
                 ),
               ),
               const Spacer(),

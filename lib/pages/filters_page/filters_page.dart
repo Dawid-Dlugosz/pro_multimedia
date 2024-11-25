@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+
 import 'package:pro_multimedia/dummy_data.dart';
 import 'package:pro_multimedia/pages/filters_page/widgets/filter_container.dart';
-import 'package:pro_multimedia/utils/image_asset.dart';
 import 'package:pro_multimedia/widgets/close_app_bar.dart';
 
 class FiltersPage extends StatelessWidget {

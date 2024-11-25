@@ -7,7 +7,8 @@ class BottonBorder extends StatelessWidget {
   final Color color;
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return AnimatedContainer(
+      duration: const Duration(milliseconds: 300),
       decoration: BoxDecoration(
           border: Border(
         bottom: BorderSide(
