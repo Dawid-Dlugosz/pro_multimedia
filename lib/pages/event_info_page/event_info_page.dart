@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
+
 import 'package:pro_multimedia/custom_theme/color_extension.dart';
 import 'package:pro_multimedia/entities/event.dart';
 import 'package:pro_multimedia/pages/event_info_page/widgets/actions_button.dart';
+import 'package:pro_multimedia/pages/event_info_page/widgets/enter.dart';
 import 'package:pro_multimedia/pages/event_info_page/widgets/event_title.dart';
 import 'package:pro_multimedia/pages/event_info_page/widgets/informations.dart';
 import 'package:pro_multimedia/pages/event_info_page/widgets/place_informations.dart';
+import 'package:pro_multimedia/pages/event_info_page/widgets/socials_media.dart';
 import 'package:pro_multimedia/utils/image_asset.dart';
 
 class EventInfoPage extends StatelessWidget {
@@ -89,7 +92,25 @@ class EventInfoPage extends StatelessWidget {
                       title: 'Program:',
                       list: event.programs,
                     ),
-                    event.isFree ? Container() : Container(),
+                    Padding(
+                      padding: const EdgeInsets.only(
+                        left: 10,
+                        top: 10,
+                      ),
+                      child: event.isFree
+                          ? Enter(
+                              label: 'Wydarzenie bezpłatne',
+                              imagePath: ImageAsset.free,
+                            )
+                          : Enter(
+                              label: 'Wydarzenie płatne',
+                              imagePath: ImageAsset.paid,
+                            ),
+                    ),
+                    const SizedBox(
+                      height: 10,
+                    ),
+                    const SocialsMedia()
                   ],
                 ),
               )
