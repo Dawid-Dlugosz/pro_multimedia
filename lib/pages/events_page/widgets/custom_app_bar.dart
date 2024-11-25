@@ -56,7 +56,7 @@ class _CustomAppBarState extends State<CustomAppBar>
       _controller.reverse();
       FocusScope.of(context).unfocus();
       _textEditingController.clear();
-      SearcherInherited.of(context)!.clear;
+      SearcherInherited.of(context)!.clear();
     }
   }
 

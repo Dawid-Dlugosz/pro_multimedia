@@ -29,5 +29,7 @@ class ImageAsset {
       map = '${basePath}map.png',
       page = '${basePath}page.png',
       free = '${basePath}bezplatne.png',
-      paied = '${basePath}platne.png';
+      paid = '${basePath}platne.png',
+      facebook = '${basePath}fb.png',
+      instagram = '${basePath}ig.png';
 }
