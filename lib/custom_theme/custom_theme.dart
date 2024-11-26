@@ -14,6 +14,44 @@ class CustomTheme {
   );
 
   static ThemeData customTheme = ThemeData(
+    bottomSheetTheme: BottomSheetThemeData(
+      backgroundColor: colorExtension.pageBackgroudColor,
+    ),
+    elevatedButtonTheme: ElevatedButtonThemeData(
+      style: ElevatedButton.styleFrom(
+        foregroundColor: Colors.white,
+        backgroundColor: colorExtension.primaryColor,
+        textStyle: const TextStyle(
+          color: Colors.white,
+          fontWeight: FontWeight.w700,
+          fontSize: 16,
+        ),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(26),
+        ),
+      ),
+    ),
+    textButtonTheme: TextButtonThemeData(
+      style: ElevatedButton.styleFrom(
+        foregroundColor: colorExtension.primaryColor,
+        textStyle: TextStyle(
+          color: colorExtension.primaryColor,
+          fontWeight: FontWeight.w700,
+          fontSize: 16,
+        ),
+      ),
+    ),
+    sliderTheme: SliderThemeData(
+      activeTrackColor: colorExtension.primaryColor,
+      inactiveTrackColor: Colors.black.withOpacity(0.07),
+      thumbColor: Colors.white,
+      thumbShape: const RoundSliderThumbShape(
+        enabledThumbRadius: 10.0,
+        elevation: 3,
+      ),
+      overlayShape: SliderComponentShape.noOverlay,
+      trackHeight: 3.0,
+    ),
     bottomNavigationBarTheme: BottomNavigationBarThemeData(
       backgroundColor: colorExtension.bottomNav,
     ),

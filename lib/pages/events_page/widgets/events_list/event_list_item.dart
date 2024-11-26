@@ -16,7 +16,7 @@ class EventListItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 114,
+      height: 120,
       margin: const EdgeInsets.only(bottom: 10),
       decoration: BoxDecoration(
         color: Theme.of(context)
@@ -44,8 +44,16 @@ class EventListItem extends StatelessWidget {
         },
         child: Row(
           children: [
-            Image.asset(
-              event.imageSnipped,
+            ClipRRect(
+              borderRadius: const BorderRadius.only(
+                topLeft: Radius.circular(10),
+                bottomLeft: Radius.circular(10),
+              ),
+              child: Image.asset(
+                event.imageSnipped,
+                height: 120,
+                fit: BoxFit.cover,
+              ),
             ),
             Expanded(
               child: Padding(
@@ -95,7 +103,7 @@ class EventListItem extends StatelessWidget {
                       ),
                     ),
                     const SizedBox(
-                      width: 20,
+                      width: 10,
                     ),
                     Column(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,

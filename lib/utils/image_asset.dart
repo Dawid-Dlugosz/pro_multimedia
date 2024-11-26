@@ -31,5 +31,7 @@ class ImageAsset {
       free = '${basePath}bezplatne.png',
       paid = '${basePath}platne.png',
       facebook = '${basePath}fb.png',
-      instagram = '${basePath}ig.png';
+      instagram = '${basePath}ig.png',
+      cancel = '${basePath}cancel.png',
+      expand = '${basePath}expand.png';
 }

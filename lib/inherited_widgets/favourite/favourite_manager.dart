@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import 'package:pro_multimedia/inherited_widgets/favourite/favourite_inherited.dart';
 
 class FavoritesManager extends StatefulWidget {
