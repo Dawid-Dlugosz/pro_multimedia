@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'package:pro_multimedia/entities/filter.dart';
+
 class FiltersInherited extends InheritedWidget {
   const FiltersInherited({
     required this.tags,
@@ -7,15 +9,19 @@ class FiltersInherited extends InheritedWidget {
     required this.unselectTag,
     required this.selectTags,
     required this.unselectTags,
+    required this.isTagSelected,
+    required this.isCategorySelected,
     required super.child,
     super.key,
   });
 
-  final List<String> tags;
+  final Set<String> tags;
   final Function(String tag) selectTag;
   final Function(String tag) unselectTag;
   final Function(List<String> tags) selectTags;
   final Function(List<String> tags) unselectTags;
+  final Function(String tag) isTagSelected;
+  final Function(Filter filter) isCategorySelected;
 
   @override
   bool updateShouldNotify(covariant FiltersInherited oldWidget) =>

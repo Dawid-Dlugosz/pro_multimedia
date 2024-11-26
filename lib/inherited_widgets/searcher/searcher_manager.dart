@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import 'package:pro_multimedia/inherited_widgets/searcher/searcher_inherited.dart';
 
 class SearcherManager extends StatefulWidget {

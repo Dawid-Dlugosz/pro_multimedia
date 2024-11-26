@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+
 import 'package:pro_multimedia/custom_theme/color_extension.dart';
 import 'package:pro_multimedia/inherited_widgets/favourite/favourite_inherited.dart';
-
 import 'package:pro_multimedia/utils/image_asset.dart';
 
 class Favourite extends StatelessWidget {

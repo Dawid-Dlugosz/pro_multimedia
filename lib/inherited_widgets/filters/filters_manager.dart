@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+
+import 'package:pro_multimedia/entities/filter.dart';
 import 'package:pro_multimedia/inherited_widgets/filters/filters_inherited.dart';
 
 class FiltersManager extends StatefulWidget {
@@ -11,30 +13,41 @@ class FiltersManager extends StatefulWidget {
 }
 
 class _FiltersManagerState extends State<FiltersManager> {
-  List<String> _tags = [];
+  Set<String> _tags = {};
 
   void _unselectTags(List<String> tags) {
     setState(() {
-      _tags = List.from(_tags.where((tag) => !tags.contains(tag)).toList());
+      _tags = Set.from(_tags.where((tag) => !tags.contains(tag)).toList());
     });
   }
 
   void _selectTags(List<String> tags) {
     setState(() {
-      _tags = List.from(_tags)..addAll(tags);
+      _tags = Set.from(_tags)..addAll(tags);
     });
   }
 
   void _selectTag(String tag) {
     setState(() {
-      _tags = List.from(_tags)..add(tag.toLowerCase());
+      _tags = Set.from(_tags)..add(tag.toLowerCase());
     });
   }
 
   void _unselectTag(String tag) {
     setState(() {
-      _tags = List.from(_tags)..remove(tag.toLowerCase());
+      _tags = Set.from(_tags)..remove(tag.toLowerCase());
     });
+  }
+
+  bool _isTagSelected(String tag) {
+    return _tags.contains(tag);
+  }
+
+  bool _isCategorySelected(Filter filter) {
+    if (filter.tags.isEmpty) {
+      return _tags.contains(filter.category.toLowerCase());
+    }
+    return _tags.toSet().containsAll(filter.mapedTags());
   }
 
   @override
@@ -45,6 +58,8 @@ class _FiltersManagerState extends State<FiltersManager> {
       selectTags: _selectTags,
       unselectTag: _unselectTag,
       unselectTags: _unselectTags,
+      isTagSelected: _isTagSelected,
+      isCategorySelected: _isCategorySelected,
       child: widget.child,
     );
   }

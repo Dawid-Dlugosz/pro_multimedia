@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+
 import 'package:pro_multimedia/entities/filter.dart';
-import 'package:pro_multimedia/inherited_widgets/filters/filters_inherited.dart';
+import 'package:pro_multimedia/pages/filters_page/widgets/tag_checkbox_item.dart';
 import 'package:pro_multimedia/pages/filters_page/widgets/title_checkbox_item.dart';
 
 class FilterContainer extends StatefulWidget {
@@ -53,14 +54,9 @@ class _FilterContainerState extends State<FilterContainer>
 
   @override
   Widget build(BuildContext context) {
-    final provider = FiltersInherited.of(context);
-    final tags = provider!.tags;
-    final isSelected = widget.filter.isCatagorySelected(tags);
-
     return Column(
       children: [
         TitleCheckboxItem(
-          isSelected: isSelected,
           filter: widget.filter,
           toggleTags: _toggle,
           isOpened: _isExpanded,
@@ -71,7 +67,10 @@ class _FilterContainerState extends State<FilterContainer>
             mainAxisSize: MainAxisSize.min,
             children: [
               ...widget.filter.tags.map(
-                (element) => Text(element),
+                (element) => TagCheckboxItem(
+                  filter: widget.filter,
+                  tag: element,
+                ),
               ),
             ],
           ),

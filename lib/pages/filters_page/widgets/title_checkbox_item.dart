@@ -10,7 +10,6 @@ import 'package:pro_multimedia/widgets/botton_border.dart';
 class TitleCheckboxItem extends StatelessWidget {
   const TitleCheckboxItem({
     required this.filter,
-    required this.isSelected,
     required this.isOpened,
     required this.toggleTags,
     super.key,
@@ -18,13 +17,13 @@ class TitleCheckboxItem extends StatelessWidget {
 
   final Filter filter;
   final bool isOpened;
-  final bool isSelected;
   final Function() toggleTags;
 
   @override
   Widget build(BuildContext context) {
     final colorExtension = Theme.of(context).extension<ColorExtension>()!;
     final provider = FiltersInherited.of(context)!;
+    final isSelected = provider.isCategorySelected(filter);
 
     return GestureDetector(
       onTap: () {

@@ -10,12 +10,6 @@ class Filter {
   final String category;
   final List<String> tags;
 
-  bool isCatagorySelected(List<String> tags) {
-    final mapedTags =
-        this.tags.map((element) => element.toLowerCase()).toList();
-    if (mapedTags.isEmpty) {
-      return tags.contains(category.toLowerCase());
-    }
-    return mapedTags.every((element) => tags.contains(element));
-  }
+  List<String> mapedTags() =>
+      tags.map((element) => element.toLowerCase()).toList();
 }
