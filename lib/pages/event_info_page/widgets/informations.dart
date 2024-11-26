@@ -43,7 +43,7 @@ class Informations extends StatelessWidget {
                           .textColor,
                       radius: 2,
                     ),
-                    SizedBox(width: 10),
+                    const SizedBox(width: 10),
                     Expanded(
                       child: Text(
                         item.getText(),

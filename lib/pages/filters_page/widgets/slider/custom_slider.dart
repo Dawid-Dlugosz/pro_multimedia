@@ -195,8 +195,6 @@ class _ArrowPainter extends CustomPainter {
 
     final trianglePath = Path();
 
-    print('sadsad $arrowPosition');
-
     if (arrowPosition == ArrowPosition.center) {
       trianglePath.moveTo(size.width / 2 - 5, 0);
       trianglePath.lineTo(size.width / 2, -6);

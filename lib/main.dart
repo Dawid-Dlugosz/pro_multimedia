@@ -8,6 +8,7 @@ void main() {
   runApp(
     FiltersManager(
       child: MaterialApp(
+        debugShowCheckedModeBanner: false,
         theme: CustomTheme.customTheme,
         home: const StartScreen(),
       ),

@@ -140,11 +140,9 @@ class Actions extends StatelessWidget {
           ),
         ),
         IconButton(
-          onPressed: () => Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (_) => const FiltersPage(),
-            ),
+          onPressed: () => showBottomSheet(
+            context: context,
+            builder: (_) => const FiltersPage(),
           ),
           icon: Image.asset(
             ImageAsset.filters,

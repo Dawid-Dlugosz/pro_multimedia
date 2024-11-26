@@ -11,6 +11,7 @@ class FiltersInherited extends InheritedWidget {
     required this.unselectTags,
     required this.isTagSelected,
     required this.isCategorySelected,
+    required this.clear,
     required super.child,
     super.key,
   });
@@ -18,10 +19,11 @@ class FiltersInherited extends InheritedWidget {
   final Set<String> tags;
   final Function(String tag) selectTag;
   final Function(String tag) unselectTag;
-  final Function(List<String> tags) selectTags;
-  final Function(List<String> tags) unselectTags;
+  final Function(Filter filter) selectTags;
+  final Function(Filter filter) unselectTags;
   final Function(String tag) isTagSelected;
   final Function(Filter filter) isCategorySelected;
+  final Function() clear;
 
   @override
   bool updateShouldNotify(covariant FiltersInherited oldWidget) =>

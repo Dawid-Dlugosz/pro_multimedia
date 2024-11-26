@@ -31,14 +31,12 @@ class _StartScreenState extends State<StartScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-        bottomNavigationBar: BottomNav(
-          currentIndex: _currentIndex,
-          onTap: _onTap,
-        ),
-        body: _pagesOptions.elementAt(_currentIndex),
+    return Scaffold(
+      bottomNavigationBar: BottomNav(
+        currentIndex: _currentIndex,
+        onTap: _onTap,
       ),
+      body: _pagesOptions.elementAt(_currentIndex),
     );
   }
 }

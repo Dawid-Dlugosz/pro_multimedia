@@ -32,16 +32,14 @@ class TitleCheckboxItem extends StatelessWidget {
             provider.unselectTag(filter.category.toLowerCase());
           } else {
             provider.unselectTags(
-              filter.tags.map((element) => element.toLowerCase()).toList(),
+              filter,
             );
           }
         } else {
           if (filter.tags.isEmpty) {
             provider.selectTag(filter.category.toLowerCase());
           } else {
-            provider.selectTags(
-              filter.tags.map((element) => element.toLowerCase()).toList(),
-            );
+            provider.selectTags(filter);
           }
         }
       },

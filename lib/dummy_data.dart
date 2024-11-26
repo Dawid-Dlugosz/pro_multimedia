@@ -128,6 +128,7 @@ class DummyData {
       ],
       isFree: true,
       snippedAddress: 'Spodek, Katowice',
+      tags: const ['muzyka'],
     ),
     Event(
       id: 2,
@@ -179,6 +180,7 @@ class DummyData {
       ],
       isFree: true,
       snippedAddress: 'Miejski ośrodek Kultury, Katowice',
+      tags: const [],
     ),
     Event(
       id: 3,
@@ -230,6 +232,7 @@ class DummyData {
       ],
       isFree: true,
       snippedAddress: 'Muzeum Śląskie, Katowice',
+      tags: const ['koncerty'],
     ),
     Event(
       id: 4,
@@ -281,6 +284,7 @@ class DummyData {
       ],
       isFree: true,
       snippedAddress: 'Młodzieżowy Dom Kultury, Bielsko-Biała',
+      tags: const ['kultura'],
     ),
     Event(
       id: 5,
@@ -332,6 +336,7 @@ class DummyData {
       ],
       isFree: true,
       snippedAddress: 'Gala muzyki filmowej',
+      tags: const [],
     ),
   ];
 

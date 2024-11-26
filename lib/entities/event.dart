@@ -16,6 +16,7 @@ class Event {
   final bool isFree;
   final String snippedAddress;
   final String imageSnipped;
+  final List<String> tags;
 
   const Event({
     required this.id,
@@ -31,6 +32,7 @@ class Event {
     required this.isFree,
     required this.snippedAddress,
     required this.imageSnipped,
+    required this.tags,
   });
 
   String formattedPerformances() {

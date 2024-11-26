@@ -15,15 +15,20 @@ class FiltersManager extends StatefulWidget {
 class _FiltersManagerState extends State<FiltersManager> {
   Set<String> _tags = {};
 
-  void _unselectTags(List<String> tags) {
+  void _unselectTags(Filter filter) {
+    _tags = Set.from(
+        _tags.where((tag) => !filter.mapedTags().contains(tag)).toList());
     setState(() {
-      _tags = Set.from(_tags.where((tag) => !tags.contains(tag)).toList());
+      _tags = Set.from(
+          _tags.where((tag) => tag != filter.category.toLowerCase()).toList());
     });
   }
 
-  void _selectTags(List<String> tags) {
+  void _selectTags(Filter filter) {
     setState(() {
-      _tags = Set.from(_tags)..addAll(tags);
+      _tags = Set.from(_tags)
+        ..addAll(filter.mapedTags())
+        ..add(filter.category.toLowerCase());
     });
   }
 
@@ -36,6 +41,12 @@ class _FiltersManagerState extends State<FiltersManager> {
   void _unselectTag(String tag) {
     setState(() {
       _tags = Set.from(_tags)..remove(tag.toLowerCase());
+    });
+  }
+
+  void _clear() {
+    setState(() {
+      _tags = {};
     });
   }
 
@@ -60,6 +71,7 @@ class _FiltersManagerState extends State<FiltersManager> {
       unselectTags: _unselectTags,
       isTagSelected: _isTagSelected,
       isCategorySelected: _isCategorySelected,
+      clear: _clear,
       child: widget.child,
     );
   }
