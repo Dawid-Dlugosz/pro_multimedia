@@ -14,6 +14,17 @@ class CustomTheme {
   );
 
   static ThemeData customTheme = ThemeData(
+    sliderTheme: SliderThemeData(
+      activeTrackColor: colorExtension.primaryColor,
+      inactiveTrackColor: Colors.black.withOpacity(0.07),
+      thumbColor: Colors.white,
+      thumbShape: const RoundSliderThumbShape(
+        enabledThumbRadius: 10.0,
+        elevation: 3,
+      ),
+      overlayShape: SliderComponentShape.noOverlay,
+      trackHeight: 3.0,
+    ),
     bottomNavigationBarTheme: BottomNavigationBarThemeData(
       backgroundColor: colorExtension.bottomNav,
     ),
