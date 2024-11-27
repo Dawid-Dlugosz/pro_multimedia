@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
 import 'package:pro_multimedia/entities/filter.dart';
-import 'package:pro_multimedia/pages/filters_page/widgets/tag_checkbox_item.dart';
-import 'package:pro_multimedia/pages/filters_page/widgets/title_checkbox_item.dart';
+import 'package:pro_multimedia/modals/filters_modal/widgets/tag_checkbox_item.dart';
+import 'package:pro_multimedia/modals/filters_modal/widgets/title_checkbox_item.dart';
 
 class FilterContainer extends StatefulWidget {
   const FilterContainer({required this.filter, super.key});

@@ -29,7 +29,7 @@ class FilterButtons extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      mainAxisAlignment: MainAxisAlignment.spaceAround,
       children: [
         TextButton(
           onPressed: () {
@@ -38,7 +38,7 @@ class FilterButtons extends StatelessWidget {
           child: const Text('Wyczyść'),
         ),
         ElevatedButton(
-          onPressed: () {},
+          onPressed: () => Navigator.pop(context),
           child: Text(
             'Pokaż wyniki (${eventCount(context)})',
           ),
