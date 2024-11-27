@@ -33,5 +33,6 @@ class ImageAsset {
       facebook = '${basePath}fb.png',
       instagram = '${basePath}ig.png',
       cancel = '${basePath}cancel.png',
-      expand = '${basePath}expand.png';
+      expand = '${basePath}expand.png',
+      setItem = '${basePath}set_item.png';
 }

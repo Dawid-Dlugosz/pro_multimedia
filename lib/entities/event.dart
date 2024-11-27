@@ -65,4 +65,19 @@ class Event {
 
     return '$start r.';
   }
+
+  String formattedStartDate() {
+    return '${startDate.day.toString().padLeft(2, '0')}.'
+        '${startDate.month.toString().padLeft(2, '0')}.'
+        '${startDate.year.toString().substring(2)}';
+  }
+
+  String formattedEndDate() {
+    if (endDate != null) {
+      return '${endDate!.day.toString().padLeft(2, '0')}.'
+          '${endDate!.month.toString().padLeft(2, '0')}.'
+          '${endDate!.year.toString().substring(2)}';
+    }
+    return formattedStartDate();
+  }
 }

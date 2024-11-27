@@ -3,44 +3,31 @@ import 'package:flutter/material.dart';
 import 'package:pro_multimedia/custom_theme/color_extension.dart';
 import 'package:pro_multimedia/entities/filter.dart';
 import 'package:pro_multimedia/inherited_widgets/filters/filters_inherited.dart';
-import 'package:pro_multimedia/pages/filters_page/widgets/custom_checkbox.dart';
-import 'package:pro_multimedia/utils/image_asset.dart';
+import 'package:pro_multimedia/modals/filters_modal/widgets/custom_checkbox.dart';
 import 'package:pro_multimedia/widgets/botton_border.dart';
 
-class TitleCheckboxItem extends StatelessWidget {
-  const TitleCheckboxItem({
+class TagCheckboxItem extends StatelessWidget {
+  const TagCheckboxItem({
+    required this.tag,
     required this.filter,
-    required this.isOpened,
-    required this.toggleTags,
     super.key,
   });
 
+  final String tag;
   final Filter filter;
-  final bool isOpened;
-  final Function() toggleTags;
 
   @override
   Widget build(BuildContext context) {
     final colorExtension = Theme.of(context).extension<ColorExtension>()!;
     final provider = FiltersInherited.of(context)!;
-    final isSelected = provider.isCategorySelected(filter);
+    final isSelected = provider.isTagSelected(tag.toLowerCase());
 
     return GestureDetector(
       onTap: () {
         if (isSelected) {
-          if (filter.tags.isEmpty) {
-            provider.unselectTag(filter.category.toLowerCase());
-          } else {
-            provider.unselectTags(
-              filter,
-            );
-          }
+          provider.unselectTag(tag);
         } else {
-          if (filter.tags.isEmpty) {
-            provider.selectTag(filter.category.toLowerCase());
-          } else {
-            provider.selectTags(filter);
-          }
+          provider.selectTag(tag);
         }
       },
       child: BottonBorder(
@@ -56,20 +43,9 @@ class TitleCheckboxItem extends StatelessWidget {
           ),
           child: Row(
             children: [
-              filter.tags.isNotEmpty
-                  ? SizedBox(
-                      width: 30,
-                      height: 30,
-                      child: IconButton(
-                        onPressed: toggleTags,
-                        icon: Image.asset(
-                          ImageAsset.expand,
-                        ),
-                      ),
-                    )
-                  : const SizedBox(
-                      width: 30,
-                    ),
+              const SizedBox(
+                width: 40,
+              ),
               Padding(
                 padding: const EdgeInsets.only(left: 10),
                 child: AnimatedDefaultTextStyle(
@@ -81,7 +57,7 @@ class TitleCheckboxItem extends StatelessWidget {
                         ? colorExtension.primaryColor
                         : colorExtension.textColor,
                   ),
-                  child: Text(filter.category),
+                  child: Text(tag),
                 ),
               ),
               const Spacer(),

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:pro_multimedia/custom_theme/color_extension.dart';
 import 'package:pro_multimedia/inherited_widgets/searcher/searcher_inherited.dart';
-import 'package:pro_multimedia/pages/filters_page/filters_page.dart';
+import 'package:pro_multimedia/modals/filters_modal/filters_modal.dart';
 import 'package:pro_multimedia/utils/image_asset.dart';
 
 class CustomAppBar extends StatefulWidget {

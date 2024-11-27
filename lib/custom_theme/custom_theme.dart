@@ -73,6 +73,43 @@ class CustomTheme {
         borderRadius: BorderRadius.circular(35),
       ),
     ),
+    switchTheme: SwitchThemeData(
+      thumbColor: WidgetStateProperty.resolveWith<Color?>(
+        (Set<WidgetState> states) {
+          if (states.contains(WidgetState.selected)) {
+            return colorExtension.pageBackgroudColor; // Active thumb color
+          }
+          return colorExtension.textColor; // Inactive thumb color
+        },
+      ),
+      thumbIcon: WidgetStateProperty.resolveWith<Icon?>(
+        (Set<WidgetState> states) {
+          if (states.contains(WidgetState.selected)) {
+            return Icon(
+              Icons.check,
+              color: colorExtension.configColor,
+            );
+          }
+          return null;
+        },
+      ),
+      trackColor: WidgetStateProperty.resolveWith<Color?>(
+        (Set<WidgetState> states) {
+          if (states.contains(WidgetState.selected)) {
+            return colorExtension.configColor;
+          }
+          return colorExtension.pageBackgroudColor;
+        },
+      ),
+      trackOutlineColor: WidgetStateProperty.resolveWith<Color?>(
+        (Set<WidgetState> states) {
+          if (states.contains(WidgetState.selected)) {
+            return colorExtension.configColor;
+          }
+          return colorExtension.textColor;
+        },
+      ),
+    ),
     extensions: [colorExtension],
   );
 }
