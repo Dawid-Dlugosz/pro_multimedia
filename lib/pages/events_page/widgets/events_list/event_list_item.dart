@@ -15,8 +15,11 @@ class EventListItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isPortrait =
+        MediaQuery.of(context).orientation == Orientation.portrait;
+    final height = isPortrait ? 120.0 : 140.0;
     return Container(
-      height: 120,
+      height: height,
       margin: const EdgeInsets.only(bottom: 10),
       decoration: BoxDecoration(
         color: Theme.of(context)
@@ -51,7 +54,7 @@ class EventListItem extends StatelessWidget {
               ),
               child: Image.asset(
                 event.imageSnipped,
-                height: 120,
+                height: height,
                 fit: BoxFit.cover,
               ),
             ),

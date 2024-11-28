@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:pro_multimedia/custom_theme/color_extension.dart';
-import 'package:pro_multimedia/modals/filters_modal/widgets/slider/custom_divider.dart';
+import 'package:pro_multimedia/pages/filters_page/widgets/slider/custom_divider.dart';
 
 enum ArrowPosition {
   center,
@@ -98,7 +98,7 @@ class _CustomSliderState extends State<CustomSlider> {
                             if (value > 90) {
                               _arrowPosition = ArrowPosition.right;
                               position = _labelWidth - (paddingSlider / 2);
-                            } else if (value < 30) {
+                            } else if (value < 10) {
                               _arrowPosition = ArrowPosition.left;
                               position = -(paddingSlider / 2);
                             } else {

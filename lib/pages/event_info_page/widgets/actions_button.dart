@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+
 import 'package:pro_multimedia/entities/event.dart';
-import 'package:pro_multimedia/modals/calendar_modal/calendar_modal.dart';
 import 'package:pro_multimedia/pages/event_info_page/widgets/action_button.dart';
+import 'package:pro_multimedia/pages/calendar_page/calendar_page.dart';
 import 'package:pro_multimedia/utils/image_asset.dart';
 
 class ActionsButton extends StatelessWidget {
@@ -17,10 +18,11 @@ class ActionsButton extends StatelessWidget {
       children: [
         ActionButton(
           onTap: () {
-            showModalBottomSheet(
-              isScrollControlled: true,
-              context: context,
-              builder: (_) => CalendarModal(event: event),
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (_) => CalendarPage(event: event),
+              ),
             );
           },
           icon: Image.asset(ImageAsset.calendar),
