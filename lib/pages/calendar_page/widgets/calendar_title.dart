@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 
 import 'package:pro_multimedia/custom_theme/color_extension.dart';
 import 'package:pro_multimedia/entities/event.dart';
-import 'package:pro_multimedia/modals/calendar_modal/widgets/switch_row.dart';
-import 'package:pro_multimedia/modals/filters_modal/widgets/slider/custom_divider.dart';
+import 'package:pro_multimedia/pages/calendar_page/widgets/switch_row.dart';
+import 'package:pro_multimedia/pages/filters_page/widgets/slider/custom_divider.dart';
 import 'package:pro_multimedia/pages/event_info_page/widgets/place_informations.dart';
 
 class CalendarTitle extends StatelessWidget {

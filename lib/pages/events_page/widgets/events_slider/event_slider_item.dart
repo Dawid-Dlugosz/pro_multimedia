@@ -12,14 +12,21 @@ class EventSliderItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isPortrait =
+        MediaQuery.of(context).orientation == Orientation.portrait;
+
     return SizedBox(
       width: 300,
-      height: 244,
+      height: 224,
       child: ClipRRect(
         borderRadius: isLast
-            ? const BorderRadius.only(
-                topLeft: Radius.circular(10),
-                bottomLeft: Radius.circular(10),
+            ? BorderRadius.only(
+                topLeft: const Radius.circular(10),
+                topRight: isPortrait ? Radius.zero : const Radius.circular(10),
+                bottomLeft:
+                    isPortrait ? const Radius.circular(10) : Radius.zero,
+                bottomRight:
+                    !isPortrait ? const Radius.circular(10) : Radius.zero,
               )
             : BorderRadius.circular(10),
         child: Image.asset(

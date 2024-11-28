@@ -7,7 +7,14 @@ import 'package:pro_multimedia/inherited_widgets/searcher/searcher_inherited.dar
 import 'package:pro_multimedia/pages/events_page/widgets/events_list/event_list_item.dart';
 
 class EventsList extends StatelessWidget {
-  const EventsList({super.key});
+  const EventsList({
+    required this.isPortrait,
+    this.scrollDirection = Axis.vertical,
+    super.key,
+  });
+
+  final bool isPortrait;
+  final Axis scrollDirection;
 
   List<Event> getFilteredEvents(BuildContext context) {
     final events = <Event>[];
@@ -37,16 +44,26 @@ class EventsList extends StatelessWidget {
         )
         .toList();
 
-    return SliverList(
-      delegate: SliverChildBuilderDelegate(
-        (BuildContext context, int index) {
-          final event = filteredEvents[index];
-          return EventListItem(
-            event: event,
+    return isPortrait
+        ? SliverList(
+            delegate: SliverChildBuilderDelegate(
+              (BuildContext context, int index) {
+                final event = filteredEvents[index];
+                return EventListItem(
+                  event: event,
+                );
+              },
+              childCount: filteredEvents.length,
+            ),
+          )
+        : ListView.builder(
+            itemBuilder: (context, index) {
+              final event = filteredEvents[index];
+              return EventListItem(
+                event: event,
+              );
+            },
+            itemCount: filteredEvents.length,
           );
-        },
-        childCount: filteredEvents.length,
-      ),
-    );
   }
 }

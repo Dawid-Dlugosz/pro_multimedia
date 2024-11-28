@@ -11,7 +11,7 @@ class Tags extends StatelessWidget {
 
     return SizedBox(
       height: 40,
-      width: double.infinity,
+      width: MediaQuery.of(context).size.width,
       child: ListView.separated(
         padding: const EdgeInsets.symmetric(horizontal: 10),
         itemCount: provider.tags.length,

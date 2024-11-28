@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:pro_multimedia/custom_theme/color_extension.dart';
 import 'package:pro_multimedia/inherited_widgets/searcher/searcher_inherited.dart';
-import 'package:pro_multimedia/modals/filters_modal/filters_modal.dart';
+import 'package:pro_multimedia/pages/filters_page/filters_page.dart';
 import 'package:pro_multimedia/utils/image_asset.dart';
 
 class CustomAppBar extends StatefulWidget {
@@ -52,8 +52,10 @@ class _CustomAppBarState extends State<CustomAppBar>
     });
     if (_isVisibleSearcher) {
       _controller.forward();
+
       FocusScope.of(context).requestFocus(_focusNode);
     } else {
+      FocusManager.instance.primaryFocus?.unfocus();
       _controller.reverse();
       FocusScope.of(context).unfocus();
       _textEditingController.clear();
@@ -140,9 +142,11 @@ class Actions extends StatelessWidget {
           ),
         ),
         IconButton(
-          onPressed: () => showBottomSheet(
-            context: context,
-            builder: (_) => const FiltersPage(),
+          onPressed: () => Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (_) => const FiltersPage(),
+            ),
           ),
           icon: Image.asset(
             ImageAsset.filters,

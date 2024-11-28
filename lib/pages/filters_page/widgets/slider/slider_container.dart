@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pro_multimedia/custom_theme/color_extension.dart';
-import 'package:pro_multimedia/modals/filters_modal/widgets/slider/custom_slider.dart';
+import 'package:pro_multimedia/pages/filters_page/widgets/slider/custom_slider.dart';
 
 class SliderContainer extends StatelessWidget {
   const SliderContainer({super.key});

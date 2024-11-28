@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pro_multimedia/entities/event.dart';
-import 'package:pro_multimedia/modals/calendar_modal/widgets/select_item.dart';
+import 'package:pro_multimedia/pages/calendar_page/widgets/select_item.dart';
 
 class DateOfEvent extends StatelessWidget {
   const DateOfEvent({
